@@ -1,4 +1,4 @@
-function [mSig] = mSignal(tfield, dlength, fs, btact, Amp, Phi, fm) % функция генерации радиосигнала
+function [mSig] = mSignal(tfield, dlength, fs, btact, Amp, Phi, fm) 
     ampSig = zeros(1, length(tfield));
     phiSig = zeros(1, length(tfield));
     k=0;
