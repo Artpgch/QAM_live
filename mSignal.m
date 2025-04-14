@@ -1,12 +1,12 @@
 function [mSig] = mSignal(tfield, dlength, fs, btact, Amp, Phi, fm) 
     ampSig = zeros(1, length(tfield));
     phiSig = zeros(1, length(tfield));
-    k=0;
-    for i=1:dlength
-        for j=1:fs*btact
-                k=k+1;
-                ampSig(k)=Amp(i);
-                phiSig(k)=Phi(i);
+    k = 0;
+    for i = 1:dlength
+        for j = 1:fs*btact
+                k = k+1;
+                ampSig(k) = Amp(i);
+                phiSig(k) = Phi(i);
         end
     end
 
