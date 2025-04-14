@@ -1,13 +1,12 @@
-clear all
-dlength = 512; % количество чисел в кадре данных
-M = 64; % количество позиций модуляции
-fs= 40; % чacтота сигнального сэмплирования
-fm = 2; % частота радиосигнала
-nf = 40; % частота обновления изображения
+dlength = 512; 
+M = 64;
+fs= 40;
+fm = 2;
+nf = 40;
 [dSig, bSig, mSig, tfield, dData, bData, btact, cNums] = Qframe(dlength, M, fs, fm);
-tw = 16; % длина временного поля на графике
-tfp = 0:1/fs:tw-1/fs; % разметка временного поля графика
-sp = 1; % скорость обновления данных
+tw = 16; 
+tfp = 0:1/fs:tw-1/fs; 
+sp = 1; 
 
 F = uifigure('Name','Quadrature amplitude modulation', 'Position', [360 135 570 525],'Resize','off');
 
@@ -39,11 +38,11 @@ axis(mAx, [0 tw-1/fs -1.1*max(mSig) 1.1*max(mSig)]);
 %title(string(M) + '-QAM complex plane')
 
 
-ft=0; % счётчик сэмплов времени
-fd=0; % счётчик символов данных
-tStart=(double(convertTo(datetime('now'),"ntp")))/2^32; % текущее начальное время
+ft=0; 
+fd=0; 
+tStart=(double(convertTo(datetime('now'),"ntp")))/2^32; 
 while isvalid(F)
-t=((double(convertTo(datetime('now'),"ntp")))/2^32-tStart); % текущее время, начиная с 0
+t=((double(convertTo(datetime('now'),"ntp")))/2^32-tStart); 
 
 if  ft < t*fs
    
